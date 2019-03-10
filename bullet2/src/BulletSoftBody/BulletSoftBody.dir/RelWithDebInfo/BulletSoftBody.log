@@ -1,0 +1,11 @@
+﻿  btSoftBody.cpp
+  btSoftBodyConcaveCollisionAlgorithm.cpp
+  btSoftBodyHelpers.cpp
+D:\Libraries\bullet2\src\BulletSoftBody\btSoftBodyHelpers.cpp(555): warning C4316: 'btSoftBody::Link': object allocated on the heap may not be aligned 16
+  btSoftBodyRigidBodyCollisionConfiguration.cpp
+  btSoftRigidCollisionAlgorithm.cpp
+  btSoftRigidDynamicsWorld.cpp
+  btSoftSoftCollisionAlgorithm.cpp
+  btDefaultSoftBodySolver.cpp
+  Generating Code...
+  BulletSoftBody.vcxproj -> D:\Libraries\bullet2\lib\RelWithDebInfo\BulletSoftBody_RelWithDebugInfo.lib
