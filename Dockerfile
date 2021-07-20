@@ -1,17 +1,14 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    #apt-get -y upgrade && \
-    apt-get install -y wget liblua5.1-dev && \
-    apt-get install -y make git software-properties-common && \
+    apt-get -y --no-install-recommends install --fix-missing wget liblua5.1-dev make git software-properties-common apt-transport-https ca-certificates gpg-agent && \
     wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-8 main" && \
+    apt-add-repository "deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main" && \
     apt-get update && \
-    apt-get install -y clang-8 && \
-    update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-8 1000 && \
-    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-8 1000 && \
-#    update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-7 1000 && \
+    apt-get -y --no-install-recommends install --fix-missing  clang-11 && \
+    update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 1000 && \
+    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 1000 && \
     wget -qO- https://github.com/premake/premake-core/releases/download/v5.0.0-alpha12/premake-5.0.0-alpha12-linux.tar.gz | tar xvz -C /usr/bin/ && \
     apt-get remove --purge -y wget software-properties-common && \
     apt-get autoremove -y && \
