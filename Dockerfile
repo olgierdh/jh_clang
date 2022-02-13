@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install --fix-missing  clang-11 && \
     update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 1000 && \
     update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 1000 && \
-    wget -qO- https://github.com/premake/premake-core/releases/download/v5.0.0-alpha12/premake-5.0.0-alpha12-linux.tar.gz | tar xvz -C /usr/bin/ && \
+    wget -qO- https://github.com/premake/premake-core/releases/download/v5.0.0-beta1/premake-5.0.0-beta1-linux.tar.gz | tar xvz -C /usr/bin/ && \
     apt-get remove --purge -y wget software-properties-common && \
     apt-get autoremove -y && \
     apt-get clean && \
